@@ -1,8 +1,6 @@
 # Kountries
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/kountries`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Ruby gem that makes it easier to work with countries.
 
 ## Installation
 
@@ -22,7 +20,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Usage;
+```ruby
+Kountries::LookupByCode.call(code: "KE") # get country by code
+=> #<OpenStruct alpha2="KE", alpha3="KEN", country_code="254", name="Kenya", unofficial_names=["Kenya", "Kenia", "ケニア"]>
+
+Kountries::LookupByName.call(name: "Vanuatu") # get country by name
+=> #<OpenStruct alpha2="VU", alpha3="VUT", country_code="678", name="Vanuatu", unofficial_names=["Vanuatu", "バヌアツ"]>
+```
 
 ## Development
 
@@ -32,7 +37,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/kountries.
+Bug reports and pull requests are welcome on GitHub at https://github.com/Sylvance/kountries.
 
 ## License
 

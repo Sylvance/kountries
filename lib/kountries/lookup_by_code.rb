@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module Kountries
+  # lookup country by code
   class LookupByCode
     def self.call(code:)
       new(code).call
@@ -11,8 +12,6 @@ module Kountries
     end
 
     def call
-      return nil if code.blank?
-
       country_lookup
     end
 
@@ -21,11 +20,11 @@ module Kountries
     attr_reader :code
 
     def country_lookup
-      african_country.name ||
-        american_country.name ||
-        asian_country.name ||
-        european_country.name ||
-        oceania_country.name || nil
+      african_country ||
+        american_country ||
+        asian_country ||
+        european_country ||
+        oceania_country || nil
     end
 
     def african_country
